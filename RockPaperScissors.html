@@ -1,0 +1,75 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="RPS.css">
+	<script src="game.js"></script>
+	<title>Rock Paper Scissors</title>
+	<!-- Name: Joshua Knox -->
+	<!-- ID: 1217093371 -->
+</head>
+
+<!-- Pop up for users name -->
+<h1><script>
+var getUser = null;
+
+while (getUser === null || !isNaN(getUser)){
+	getUser = prompt("Please enter your name: ");
+
+	if (getUser === null || !isNaN(getUser)){
+		alert("Invalid name entered, you must enter a name, please try again!");
+	}else{
+		document.write("Hello ", getUser, " welcome to Rock, Paper, Scissors!");
+	}
+}
+</script></h1>
+
+<!-- Table that is displayed for the game -->
+<body>
+	<table>
+	<tr>
+		<th>Your Selection</th>
+		<th></th>
+		<th>Computer</th>
+	</tr>
+	<tr>
+		<th>
+		<form action="/action_page.php">
+		<input type="radio" id="Rock" name="selection" value="Rock" onclick="rockChoice()">
+		<label for="Rock">Rock</label><br>
+		<input type="radio" id="Paper" name="selection" value="Paper" onclick="paperChoice()">
+		<label for="Paper">Paper</label><br>
+		<input type="radio" id="Scissors" name="selection" value="Scissors" onclick="scissorsChoice()">
+		<label for="Scissors">Scissors</label>
+		</form>
+		</th>
+		
+		<th>
+		<button onclick="play()">Go!</button>
+		<p id="demo"></p>
+		
+		</th>
+		
+		<th id="cpuSelection">
+			<!-- Computer Input -->
+		</th>
+	</tr>
+	<tr>
+		<th>You Selected:</th>
+		<th id="userChoice" colspan = "2"></th>
+	</tr>
+	<tr>
+		<!-- Computer Selection -->
+		<th>Computer Chose:</th>
+		<th id="cpuChoice" colspan = "2"></th>
+	</tr>
+	</table>
+	
+	Total Times Played: <a id="total"></a> <br>
+	Total Times Rock: <a id="totalRock"></a> <br>
+	Total Times Paper: <a id="totalPaper"></a> <br>
+	Total Times Scissors: <a id="totalScissors"></a> <br>
+	Win: <a id="wins"></a> <br>
+	Loss: <a id="losses"></a> <br>
+	Tie: <a id="ties"></a>
+	
+</body>
+</html>
